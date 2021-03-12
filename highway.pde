@@ -3,14 +3,14 @@ int highwaySideLinesW = 10; // Weight of the lines
 int highwaySlinesDisTop;
 int highwaySlinesDisBottom;
 //Lines int
-int yLines1 = 140;
-int yLines2 = 260;
-int yLines3 = 540;
-int yLines4 = 660;
+int yLines1 = 130;
+int yLines2 = 250;
+int yLines3 = 550;
+int yLines4 = 670;
 int xLines;
-int lineSpace = 200;
-int lineLength = 50;
-int lineWidth = 5;
+int lineSpace = 128;
+int lineLength = 64;
+int lineWidth = 4;
 
 void highway() {
   highwaySlinesDisTop = highwaySideLinesW + 5; // Cal pos
@@ -27,7 +27,7 @@ void highway() {
   noStroke();
   rect((width / 2), (height / 2), width, 50); // The lines direction splitter
   
-  
+  lines();
 }
 
 void lines() {
