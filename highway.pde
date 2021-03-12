@@ -1,10 +1,14 @@
+//Highway Int
 int highwaySideLinesW = 10; // Weight of the lines
 int highwaySlinesDisTop;
 int highwaySlinesDisBottom;
-
-int yLines = 100;
+//Lines int
+int yLines1 = 140;
+int yLines2 = 260;
+int yLines3 = 540;
+int yLines4 = 660;
 int xLines;
-int lineSpace = 100;
+int lineSpace = 200;
 int lineLength = 50;
 int lineWidth = 5;
 
@@ -28,9 +32,11 @@ void highway() {
 
 void lines() {
   
-  for(int xLines = 0; xLines < 1000; xLines = xLines + lineSpace){
+  for(int xLines = 0; xLines < 1000 + lineLength; xLines = xLines + lineSpace){
     fill(255);
-      rect(xLines, yLines, lineLength, lineWidth);
-
+      rect(xLines, yLines1, lineLength, lineWidth);
+      rect(xLines, yLines2, lineLength, lineWidth);
+      rect(xLines, yLines3, lineLength, lineWidth);
+      rect(xLines, yLines4, lineLength, lineWidth);
   }
 }
