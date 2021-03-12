@@ -10,7 +10,7 @@ int paintVeh() {
   return newColor;
 }
 
-void carTires(float x, float y, int w, int h) {
+void vehTires(float x, float y, int w, int h) {
   int tireSize = 25;
   
   float rightSideY = (y - (h / 2)); // Top tires y
@@ -26,6 +26,34 @@ void carTires(float x, float y, int w, int h) {
   rect(backX, leftSideY, tireSize, 10); // Front left
 }
 
+void vehLights(float x, float y, int w, int h, boolean direc) {
+  int lightBoxW = 5;
+  int lightBoxH = 10;
+  
+  float lightsX;
+  float rightLightY;
+  float leftLightY;
+  
+  if (direc == true) {
+    lightsX = x - (w / 2);
+    rightLightY = y - (h / 4);
+    leftLightY = y + (h / 4);
+  } else {
+    lightsX = x + (w / 2);
+    rightLightY = y + (h / 4);
+    leftLightY = y - (h / 4);
+  }
+  
+  fill(#aef2ef);
+  
+  if (direc == true) {
+    rect(lightsX, rightLightY, lightBoxW, lightBoxH); // Right light
+    rect(lightsX, leftLightY, lightBoxW, lightBoxH); // Left light
+  } else {
+    rect(lightsX, rightLightY, lightBoxW, lightBoxH); // Right light
+    rect(lightsX, leftLightY, lightBoxW, lightBoxH); // Left light
+  }
+}
 
 int chooseLane(boolean direc) {
   int[] topLanesY = {72, 189, 311};
@@ -43,5 +71,45 @@ int getStaringX(boolean direc) {
     return width + carW;
   } else {
     return 0 - carW;
+  }
+}
+
+void ambulanceLightsAndText(float x, float y, int w, int h, boolean direc) {
+  int lightsSize = 15;
+  
+  float textX;
+  
+  float frontLightsX;
+  float backLightsX;
+  float leftSideLights = y + (h / 2) - 10;
+  float rightSideLights = y - (h / 2) + 10;
+  
+  if (direc == true) {
+    frontLightsX = x - (w/5);
+    backLightsX = x + (w/2) - 20;
+    textX = x + (w/8);
+  } else {
+    frontLightsX = x + (w/5);
+    backLightsX = x - (w/2) + 20;
+    textX = x - (w/8);
+  }
+  
+  fill(#04a007);
+  textSize(14);
+  text("Ambulance", textX, y + 2);
+  
+  fill(#0d6ae2);  
+  
+  ellipse(frontLightsX, leftSideLights, lightsSize, lightsSize); // Front lights
+  ellipse(frontLightsX, rightSideLights, lightsSize, lightsSize); // Front lights
+  ellipse(backLightsX, leftSideLights, lightsSize, lightsSize); // Back lights
+  ellipse(backLightsX, rightSideLights, lightsSize, lightsSize); // Back lights
+}
+
+void clearArray() {
+  for (int i = allVehicles.size(); i > 0; i--) {
+    Vehicle v = allVehicles.get(i - 1);
+    
+    allVehicles.remove(v);
   }
 }
