@@ -16,7 +16,7 @@ For at tilføje en ambulance som kører mod venstre så tryk på `q`.<br>
 For at tilføje en ambulance som kører mod højre så tryk på `a`.<br>
 
 ### Clear array
-For at slette alle allerede tilføjet biler så tryk på `r`.
+For at slette alle allerede tilføjet køretøjer så tryk på `r`.
 
 ---
 
