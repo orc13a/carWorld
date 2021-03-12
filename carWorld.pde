@@ -11,6 +11,7 @@ void setup() {
 void draw() {
   clear();
   highway();
+  lines();
 }
 
 void keyPressed() {

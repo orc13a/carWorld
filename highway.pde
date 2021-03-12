@@ -2,9 +2,11 @@ int highwaySideLinesW = 10; // Weight of the lines
 int highwaySlinesDisTop;
 int highwaySlinesDisBottom;
 
+int yLines = 100;
 int xLines;
-int yLines;
-int space;
+int lineSpace = 100;
+int lineLength = 50;
+int lineWidth = 5;
 
 void highway() {
   highwaySlinesDisTop = highwaySideLinesW + 5; // Cal pos
@@ -25,8 +27,10 @@ void highway() {
 }
 
 void lines() {
+  
+  for(int xLines = 0; xLines < 1000; xLines = xLines + lineSpace){
+    fill(255);
+      rect(xLines, yLines, lineLength, lineWidth);
 
-  rect(yLines, xLines, );
-
-
+  }
 }
