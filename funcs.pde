@@ -26,6 +26,34 @@ void vehTires(float x, float y, int w, int h) {
   rect(backX, leftSideY, tireSize, 10); // Front left
 }
 
+void vehLights(float x, float y, int w, int h, boolean direc) {
+  int lightBoxW = 5;
+  int lightBoxH = 10;
+  
+  float lightsX;
+  float rightLightY;
+  float leftLightY;
+  
+  if (direc == true) {
+    lightsX = x - (w / 2);
+    rightLightY = y - (h / 4);
+    leftLightY = y + (h / 4);
+  } else {
+    lightsX = x + (w / 2);
+    rightLightY = y + (h / 4);
+    leftLightY = y - (h / 4);
+  }
+  
+  fill(#aef2ef);
+  
+  if (direc == true) {
+    rect(lightsX, rightLightY, lightBoxW, lightBoxH); // Right light
+    rect(lightsX, leftLightY, lightBoxW, lightBoxH); // Left light
+  } else {
+    rect(lightsX, rightLightY, lightBoxW, lightBoxH); // Right light
+    rect(lightsX, leftLightY, lightBoxW, lightBoxH); // Left light
+  }
+}
 
 int chooseLane(boolean direc) {
   int[] topLanesY = {72, 189, 311};
@@ -46,18 +74,34 @@ int getStaringX(boolean direc) {
   }
 }
 
-void ambulanceLights(float x, float y, int w, int h) {
-  int lightsSize = 25;
+void ambulanceLightsAndText(float x, float y, int w, int h, boolean direc) {
+  int lightsSize = 15;
   
-  float topLightsY = y - (h / 2) + 10; // Top lights y
-  float bottomLightsY = y + (h / 2) - 10; // Top lights y
-  float topLightsX = (x - (w / 2)) + (10 + lightsSize); // Front lights x
-  float bottomLightsX = (x + (w / 2)) - (10 + lightsSize); // Back lights x
+  float textX;
   
-  fill(#0d6ae2);
+  float frontLightsX;
+  float backLightsX;
+  float leftSideLights = y + (h / 2) - 10;
+  float rightSideLights = y - (h / 2) + 10;
   
-  ellipse(topLightsX, topLightsY, lightsSize, lightsSize); // Front light
-  ellipse(topLightsX, topLightsY, lightsSize, lightsSize); // Front light
-  ellipse(bottomLightsX, topLightsX, lightsSize, lightsSize); // Front light
-  ellipse(bottomLightsX, topLightsX, lightsSize, lightsSize); // Front light
+  if (direc == true) {
+    frontLightsX = x - (w/5);
+    backLightsX = x + (w/2) - 20;
+    textX = x + (w/8);
+  } else {
+    frontLightsX = x + (w/5);
+    backLightsX = x - (w/2) + 20;
+    textX = x - (w/8);
+  }
+  
+  fill(#04a007);
+  textSize(14);
+  text("Ambulance", textX, y + 2);
+  
+  fill(#0d6ae2);  
+  
+  ellipse(frontLightsX, leftSideLights, lightsSize, lightsSize); // Front lights
+  ellipse(frontLightsX, rightSideLights, lightsSize, lightsSize); // Front lights
+  ellipse(backLightsX, leftSideLights, lightsSize, lightsSize); // Back lights
+  ellipse(backLightsX, rightSideLights, lightsSize, lightsSize); // Back lights
 }

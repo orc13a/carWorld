@@ -8,6 +8,7 @@ void setup() {
   size(1000, 800);
   
   smooth(8);
+  frameRate(60);
   
   rectMode(CENTER);
   imageMode(CENTER);
@@ -36,10 +37,10 @@ void keyPressed() {
   
   // Add Ambulance
   if (key == 'q') {
-    allVehicles.add(new Ambulance(true, ambulanceSpeed));
+    allVehicles.add(new Ambulance(true, ambulanceSpeed, 311));
   }
   
   if (key == 'a') {
-    allVehicles.add(new Ambulance(false, ambulanceSpeed));
+    allVehicles.add(new Ambulance(false, ambulanceSpeed, 478));
   }
 }

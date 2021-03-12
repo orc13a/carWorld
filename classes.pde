@@ -57,7 +57,8 @@ class Car extends Vehicle {
   }
   
   void vehDisplay(){
-    vehTires(x, y, carW, carH);
+    vehTires(x, y, carW, carH); // Set the tires
+    vehLights(x, y, carW, carH, direc); // Set the front lights
     
     fill(c); // Car color
     if (direc == true) {
@@ -66,16 +67,16 @@ class Car extends Vehicle {
       rect(x, y, carW, carH, 12, 18, 18, 12); // Car body
     }
   } 
-  
 }
 
 class Ambulance extends Vehicle {
- Ambulance(boolean direc_, float speed_) {
-    super(getStaringX(direc_), chooseLane(direc_), color(#fff432), direc_, speed_);
+ Ambulance(boolean direc_, float speed_, float lane_) {
+    super(getStaringX(direc_), lane_, color(#fff432), direc_, speed_);
   }
   
   void vehDisplay(){
-    vehTires(x, y, carW, carH);
+    vehTires(x, y, carW, carH); // Set the tires
+    vehLights(x, y, carW, carH, direc); // Set the front lights
     
     fill(c); // Ambulance color
     if (direc == true) {
@@ -84,6 +85,6 @@ class Ambulance extends Vehicle {
       rect(x, y, carW, carH, 12, 18, 18, 12); // Ambulance body
     }
     
-    ambulanceLights(x, y, carW, carH);
+    ambulanceLightsAndText(x, y, carW, carH, direc); // Set blue lights
   } 
 }
