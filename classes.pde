@@ -49,16 +49,7 @@ class Vehicle {
 
 class Car extends Vehicle {
   Car(boolean direc_) {
-    int calX;
-    int calY = chooseLane(direc_);
-    
-    if (direc_ == true) {
-      calX = width + carW;
-    } else {
-      calX = 0 - carW;
-    }
-    
-    super(calX, calY, paintVeh(), direc_);
+    super(getStaringX(direc_), chooseLane(direc_), paintVeh(), direc_);
   }
   
   void vehDisplay(){
@@ -122,4 +113,12 @@ int chooseLane(boolean direc) {
   } else {
     return topLanesY[int(random(3))];
   }
+}
+
+int getStaringX(boolean direc) {
+  if (direc == true) {
+      return width + carW;
+    } else {
+      return 0 - carW;
+    }
 }
