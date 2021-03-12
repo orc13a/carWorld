@@ -1,3 +1,13 @@
+// Lanes (y-coor)
+// <-- 
+// Top: 72
+// Mid: 189
+// bottom: 311
+// -->
+// Top: 
+// Mid: 
+// bottom: 
+
 int carW = 150;
 int carH = 75;
 
@@ -18,8 +28,18 @@ class Vehicle {
     vehDisplay();
   }
   
-  void drive() {
-    
+  void drive() {    
+    if (direc == true) {
+      x--;
+      if (x < (0 - carW)) {
+        x = width + carW;
+      }
+    } else {
+      x++;
+      if (x > (width + carW)) {
+        x = 0 - carW;
+      }
+    }
   }
   
   void vehDisplay() {
@@ -29,8 +49,14 @@ class Vehicle {
 
 class Car extends Vehicle {
   Car(boolean direc_) {
-    int calX = ;
-    int calY = ;
+    int calX;
+    int calY = chooseLane(direc_);
+    
+    if (direc_ == true) {
+      calX = width + carW;
+    } else {
+      calX = 0 - carW;
+    }
     
     super(calX, calY, paintVeh(), direc_);
   }
@@ -84,4 +110,16 @@ void carTires(float x, float y, int w, int h) {
   rect(frontX, leftSideY, tireSize, 10); // Front left
   rect(backX, rightSideY, tireSize, 10); // Front right
   rect(backX, leftSideY, tireSize, 10); // Front left
+}
+
+
+int chooseLane(boolean direc) {
+  int[] topLanesY = {72, 189, 311};
+  int[] bottomLanesY = {0, 0, 0};
+  
+  if (direc == true) {
+    return topLanesY[int(random(3))];
+  } else {
+    return topLanesY[int(random(3))];
+  }
 }

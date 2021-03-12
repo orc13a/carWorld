@@ -1,18 +1,10 @@
 ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
 
-// Lanes (y-coor)
-// <-- 
-// Top: 72
-// Mid: 189
-// bottom: 311
-// -->
-// Top: 
-// Mid: 
-// bottom: 
-
 void setup() {
   size(1000, 800);
+  
   smooth(8);
+  
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER);
