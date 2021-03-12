@@ -80,10 +80,10 @@ class Ambulance extends Vehicle {
     fill(c); // Ambulance color
     if (direc == true) {
       rect(x, y, carW, carH, 18, 12, 12, 18); // Ambulance body
-     // ellipse(x-10, y, 10, 10);
     } else {
       rect(x, y, carW, carH, 12, 18, 18, 12); // Ambulance body
-     // ellipse(x-10, y, 10, 10);
     }
+    
+    ambulanceLights(x, y, carW, carH);
   } 
 }

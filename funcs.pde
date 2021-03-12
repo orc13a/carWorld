@@ -1,4 +1,4 @@
-  int paintVeh() {
+int paintVeh() {
   color newColor;
   int r,g,b;
   r = int(random(255));
@@ -44,4 +44,20 @@ int getStaringX(boolean direc) {
   } else {
     return 0 - carW;
   }
+}
+
+void ambulanceLights(float x, float y, int w, int h) {
+  int lightsSize = 25;
+  
+  float topLightsY = y - (h / 2) + 10; // Top lights y
+  float bottomLightsY = y + (h / 2) - 10; // Top lights y
+  float topLightsX = (x - (w / 2)) + (10 + lightsSize); // Front lights x
+  float bottomLightsX = (x + (w / 2)) - (10 + lightsSize); // Back lights x
+  
+  fill(#0d6ae2);
+  
+  ellipse(topLightsX, topLightsY, lightsSize, lightsSize); // Front light
+  ellipse(topLightsX, topLightsY, lightsSize, lightsSize); // Front light
+  ellipse(bottomLightsX, topLightsX, lightsSize, lightsSize); // Front light
+  ellipse(bottomLightsX, topLightsX, lightsSize, lightsSize); // Front light
 }

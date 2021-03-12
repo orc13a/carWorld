@@ -25,12 +25,18 @@ void draw() {
 }
 
 void keyPressed() {
+  // Add car
   if (key == 'd') {
     allVehicles.add(new Car(true, carSpeed));
   }
   
   if (key == 'c') {
     allVehicles.add(new Car(false, carSpeed));
+  }
+  
+  // Add Ambulance
+  if (key == 'q') {
+    allVehicles.add(new Ambulance(true, ambulanceSpeed));
   }
   
   if (key == 'a') {
