@@ -18,6 +18,7 @@ void draw() {
   
   for (Vehicle v : allVehicles) {
     v.display();
+    v.drive();
   }
 }
 
