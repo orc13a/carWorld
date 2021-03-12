@@ -3,7 +3,7 @@
 ## Hent vores program
 1. Find den seneste [udgivelse](https://github.com/orc13a/carWorld/releases)
 1. Hent `carWorld.zip`
-1. `upak` / `extract` mappen
+1. `upak` / `extract` mappen `carWorld`
 1. Kør `carWorld.pde`
 
 ## Controls
