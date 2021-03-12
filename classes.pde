@@ -2,14 +2,24 @@ class Vehicle {
   Vehicle() {
   
   }
-
+  
+  void display() {
+    vehDisplay();
+  }
+  
+  void drive() {
+    
+  }
+  
+  void vehDisplay() {
+    // Needs to be here to get sub-classes vehDisplay() to get called
+  }
 }
 
 class Car extends Vehicle {
   void vehDisplay(){
     fill(255, 10, 50);
-    rect(100, 100, 50, 20);
-    
+    rect(100, 100, 50, 100);
   } 
   
 }

@@ -6,13 +6,21 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER);
+  
+  allVehicles.add(new Car());
 }
 
 void draw() {
   clear();
+  background(#333333);
   
+  for (Vehicle v : allVehicles) {
+    v.display();
+  }
 }
 
 void keyPressed() {
-  
+  if (key == 'c') {
+    allVehicles.add(new Car());
+  }
 }
