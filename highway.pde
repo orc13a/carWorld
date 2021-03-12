@@ -2,6 +2,10 @@ int highwaySideLinesW = 10; // Weight of the lines
 int highwaySlinesDisTop;
 int highwaySlinesDisBottom;
 
+int xLines;
+int yLines;
+int space;
+
 void highway() {
   highwaySlinesDisTop = highwaySideLinesW + 5; // Cal pos
   highwaySlinesDisBottom = (height - 5) - highwaySideLinesW; // Cal pos
@@ -15,5 +19,14 @@ void highway() {
   
   fill(#2bce23); // Green
   noStroke();
-  rect((width / 2), (height / 2), width, 50); // The lines derection splitter
+  rect((width / 2), (height / 2), width, 50); // The lines direction splitter
+  
+  
+}
+
+void lines() {
+
+  rect(yLines, xLines, );
+
+
 }
