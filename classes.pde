@@ -16,12 +16,14 @@ class Vehicle {
   float y;
   color c;
   boolean direc; // true: <-- | false: -->
+  float speed;
   
-  Vehicle(float x_, float y_, color c_, boolean direc_) {
+  Vehicle(float x_, float y_, color c_, boolean direc_, float speed_) {
     x = x_;
     y = y_;
     c = c_;
     direc = direc_;
+    speed = speed_;
   }
   
   void display() {
@@ -30,14 +32,16 @@ class Vehicle {
   
   void drive() {    
     if (direc == true) {
-      x--;
+      x -= speed;
+      
       if (x < (0 - carW)) {
-        x = width + carW;
+        // x = width + carW; // This code will make the cars drive in loop
       }
     } else {
-      x++;
+      x += speed;
+      
       if (x > (width + carW)) {
-        x = 0 - carW;
+        // x = 0 - carW; // This code will make the cars drive in loop
       }
     }
   }
@@ -47,9 +51,9 @@ class Vehicle {
   }
 }
 
-class Car extends Vehicle {
-  Car(boolean direc_) {
-    super(getStaringX(direc_), chooseLane(direc_), paintVeh(), direc_);
+class Car extends Vehicle { 
+  Car(boolean direc_, float speed_) {
+    super(getStaringX(direc_), chooseLane(direc_), paintVeh(), direc_, speed_);
   }
   
   void vehDisplay(){
@@ -106,12 +110,12 @@ void carTires(float x, float y, int w, int h) {
 
 int chooseLane(boolean direc) {
   int[] topLanesY = {72, 189, 311};
-  int[] bottomLanesY = {0, 0, 0};
+  int[] bottomLanesY = {478, 608, 727};
   
   if (direc == true) {
     return topLanesY[int(random(3))];
   } else {
-    return topLanesY[int(random(3))];
+    return bottomLanesY[int(random(3))];
   }
 }
 

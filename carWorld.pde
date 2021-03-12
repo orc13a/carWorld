@@ -1,5 +1,8 @@
 ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
 
+// ## Settings ##
+float carSpeed = 8;
+
 void setup() {
   size(1000, 800);
   
@@ -8,8 +11,6 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER);
-  
-  allVehicles.add(new Car(true));
 }
 
 void draw() {
@@ -24,10 +25,10 @@ void draw() {
 
 void keyPressed() {
   if (key == 'd') {
-    allVehicles.add(new Car(true));
+    allVehicles.add(new Car(true, carSpeed));
   }
   
   if (key == 'c') {
-    allVehicles.add(new Car(false));
+    allVehicles.add(new Car(false, carSpeed));
   }
 }
