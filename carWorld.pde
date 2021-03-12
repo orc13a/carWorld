@@ -12,8 +12,13 @@ void draw() {
   clear();
   highway();
   
+  for (Vehicle v : allVehicles) {
+    v.display();
+  }
 }
 
 void keyPressed() {
-  
+  if (key == 'c') {
+    allVehicles.add(new Car());
+  }
 }
