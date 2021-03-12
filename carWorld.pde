@@ -43,4 +43,9 @@ void keyPressed() {
   if (key == 'a') {
     allVehicles.add(new Ambulance(false, ambulanceSpeed, 478));
   }
+  
+  // Clear array
+  if (key == 'r') {
+    clearArray();
+  }
 }

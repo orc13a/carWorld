@@ -105,3 +105,11 @@ void ambulanceLightsAndText(float x, float y, int w, int h, boolean direc) {
   ellipse(backLightsX, leftSideLights, lightsSize, lightsSize); // Back lights
   ellipse(backLightsX, rightSideLights, lightsSize, lightsSize); // Back lights
 }
+
+void clearArray() {
+  for (int i = allVehicles.size(); i > 0; i--) {
+    Vehicle v = allVehicles.get(i - 1);
+    
+    allVehicles.remove(v);
+  }
+}
