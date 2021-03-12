@@ -17,8 +17,9 @@ void setup() {
 
 void draw() {
   clear();
-  highway();
+  highway(); // For drawing the graphics
   
+  // For displaying all the vehicles in the array
   for (Vehicle v : allVehicles) {
     v.display();
     v.drive();
