@@ -10,7 +10,7 @@ void setup() {
 
 void draw() {
   clear();
-  
+  highway();
 }
 
 void keyPressed() {
