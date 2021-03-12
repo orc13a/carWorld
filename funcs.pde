@@ -1,4 +1,4 @@
-int paintVeh() {
+  int paintVeh() {
   color newColor;
   int r,g,b;
   r = int(random(255));
@@ -10,7 +10,7 @@ int paintVeh() {
   return newColor;
 }
 
-void carTires(float x, float y, int w, int h) {
+void vehTires(float x, float y, int w, int h) {
   int tireSize = 25;
   
   float rightSideY = (y - (h / 2)); // Top tires y

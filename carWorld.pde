@@ -2,6 +2,7 @@ ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
 
 // ## Settings ##
 float carSpeed = 8;
+float ambulanceSpeed = 12;
 
 void setup() {
   size(1000, 800);
@@ -30,5 +31,9 @@ void keyPressed() {
   
   if (key == 'c') {
     allVehicles.add(new Car(false, carSpeed));
+  }
+  
+  if (key == 'a') {
+    allVehicles.add(new Ambulance(false, ambulanceSpeed));
   }
 }
