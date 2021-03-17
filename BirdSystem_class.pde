@@ -10,7 +10,7 @@ class BirdSystem extends WorldSystem {
   
   void pressKey() {
     if (key == 's') {
-      allBirds.add(new Sparrow(random(width), height, random(-2, 2), random(-15, 0)));
+      allBirds.add(new Sparrow(random(width), height, random(-2, 2), random(-birdSpeed, 0)));
     }
   }
 }

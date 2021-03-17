@@ -1,10 +1,11 @@
 WorldSystem worldSystem;
-CarSystem carSystem = new CarSystem();
-BirdSystem birdSystem = new BirdSystem();
+CarSystem carSystem;
+BirdSystem birdSystem;
 
 // ## Settings ##
 float carSpeed = 8;
 float ambulanceSpeed = 12;
+float birdSpeed = 15;
 // ##############
 
 void setup() {
@@ -17,10 +18,13 @@ void setup() {
   imageMode(CENTER);
   textAlign(CENTER);
   
-  // Vi gør det på den her møde for ellers giver Processing/Java os "StackOverflowError"
-  // Vi har prøvet at gøre det så meget OOP som muligt
   // carSystem = new CarSystem();
   // birdSystem = new BirdSystem();
+  
+  // Vi gør det på den her møde for ellers giver Processing/Java os "StackOverflowError"
+  // Vi har prøvet at gøre det så meget OOP som muligt
+  carSystem = new CarSystem();
+  birdSystem = new BirdSystem();
   
   worldSystem = new WorldSystem();
 }
