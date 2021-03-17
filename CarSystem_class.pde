@@ -7,7 +7,7 @@ class CarSystem extends WorldSystem {
     // For displaying all the vehicles in the array
     for (Vehicle v : allVehicles) {
       v.display();
-      v.drive();
+      v.move();
     }
   }
   
@@ -31,18 +31,9 @@ class CarSystem extends WorldSystem {
     }
     
     // Clear array
-    if (key == 'r') {
+    /*if (key == 'r') {
       clearArray();
-    }
-  }
-  
-  void clearArray() {
-    // Start from the end of the array, better if player is spawing new car in the midel of the resting
-    for (int i = allVehicles.size(); i > 0; i--) {
-      Vehicle v = allVehicles.get(i - 1);
-      
-      allVehicles.remove(v);
-    }
+    }*/
   }
   
   //Highway Int

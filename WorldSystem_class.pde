@@ -28,6 +28,10 @@ class WorldSystem {
   }
   
   void pressMouse() {
-    selectedSystem = int(random(allSystems.size() + 1));
+    if (selectedSystem == allSystems.size() - 1) {
+      selectedSystem = 0;
+    } else {
+      selectedSystem++;
+    }
   }
 }

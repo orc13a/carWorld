@@ -33,7 +33,7 @@ class Vehicle {
     vehDisplay(); // Display speciel car graphics
   }
   
-  void drive() {    
+  void move() {    
     if (direc == true) {
       x -= speed; // For drive <-- direction
       
