@@ -1,8 +1,11 @@
-ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
+WorldSystem worldSystem;
+CarSystem carSystem = new CarSystem();
+BirdSystem birdSystem = new BirdSystem();
 
 // ## Settings ##
 float carSpeed = 8;
 float ambulanceSpeed = 12;
+// ##############
 
 void setup() {
   size(1000, 800);
@@ -13,40 +16,23 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER);
+  
+  // Vi gør det på den her møde for ellers giver Processing/Java os "StackOverflowError"
+  // Vi har prøvet at gøre det så meget OOP som muligt
+  // carSystem = new CarSystem();
+  // birdSystem = new BirdSystem();
+  
+  worldSystem = new WorldSystem();
 }
 
 void draw() {
-  clear();
-  highway(); // For drawing the graphics
-  
-  // For displaying all the vehicles in the array
-  for (Vehicle v : allVehicles) {
-    v.display();
-    v.drive();
-  }
+  worldSystem.run();
 }
 
 void keyPressed() {
-  // Add car
-  if (key == 'd') {
-    allVehicles.add(new Car(true, carSpeed));
-  }
-  
-  if (key == 'c') {
-    allVehicles.add(new Car(false, carSpeed));
-  }
-  
-  // Add Ambulance
-  if (key == 'q') {
-    allVehicles.add(new Ambulance(true, ambulanceSpeed, 311));
-  }
-  
-  if (key == 'a') {
-    allVehicles.add(new Ambulance(false, ambulanceSpeed, 478));
-  }
-  
-  // Clear array
-  if (key == 'r') {
-    clearArray();
-  }
+  worldSystem.pressKey();
+}
+
+void mousePressed() {
+  worldSystem.pressMouse();
 }
